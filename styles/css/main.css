@@ -1,0 +1,11 @@
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.hero-gradient {
+    background: linear-gradient(
+        135deg,
+        rgba(30, 58, 138, 0.9) 0%,
+        rgba(0, 0, 0, 0.8) 100%
+    );
+}
