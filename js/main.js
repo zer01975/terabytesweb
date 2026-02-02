@@ -1,45 +1,67 @@
+// ===============================
+// LOAD PARTIALS (header, hero, footer, etc)
+// ===============================
 function loadPartials() {
     const includes = document.querySelectorAll('[data-include]');
 
     return Promise.all(
         Array.from(includes).map(el => {
-            const file = el.getAttribute('data-include');
+            const file = el.getAttribute('data-include').trim();
+
             return fetch(file)
                 .then(res => {
-                    if (!res.ok) throw new Error(`No se pudo cargar ${file}`);
+                    if (!res.ok) {
+                        throw new Error(`No se pudo cargar ${file}`);
+                    }
                     return res.text();
                 })
                 .then(html => {
                     el.innerHTML = html;
+                })
+                .catch(err => {
+                    console.error(err);
                 });
         })
     );
 }
 
-function initSite() {
+// ===============================
+// NAVBAR – estado inicial según página
+// ===============================
+function setupNavbarInitialState() {
+    const navbar = document.getElementById('navbar');
+    if (!navbar) return;
 
-    // Año footer
-    const year = document.getElementById('year');
-    if (year) {
-        year.textContent = new Date().getFullYear();
+    const isHome =
+        document.body.classList.contains('page-home') ||
+        window.location.pathname === '/' ||
+        window.location.pathname.endsWith('index.html');
+
+    if (!isHome) {
+        navbar.classList.add('bg-blue-900', 'shadow-xl', 'py-2');
+        navbar.classList.remove('bg-transparent', 'py-4');
     }
+}
 
-    // Navbar
+// ===============================
+// NAVBAR – scroll + mobile
+// ===============================
+function setupNavbar() {
     const navbar = document.getElementById('navbar');
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
 
-    if (navbar) {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('bg-blue-900', 'shadow-xl', 'py-2');
-                navbar.classList.remove('bg-transparent', 'py-4');
-            } else {
-                navbar.classList.remove('bg-blue-900', 'shadow-xl', 'py-2');
-                navbar.classList.add('bg-transparent', 'py-4');
-            }
-        });
-    }
+    if (!navbar) return;
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('bg-blue-900', 'shadow-xl', 'py-2');
+            navbar.classList.remove('bg-transparent', 'py-4');
+        } else {
+            navbar.classList.remove('bg-blue-900', 'shadow-xl', 'py-2');
+            navbar.classList.add('bg-transparent', 'py-4');
+        }
+    });
 
     if (menuBtn && mobileMenu) {
         menuBtn.addEventListener('click', () => {
@@ -52,9 +74,47 @@ function initSite() {
             });
         });
     }
+}
 
-    // Hero animations
+// ===============================
+// SMART MENU (home / servicios / contacto)
+// ===============================
+function setupSmartMenu() {
+    const isHome =
+        window.location.pathname === '/' ||
+        window.location.pathname.endsWith('index.html');
+
+    document.querySelectorAll('[data-link]').forEach(link => {
+        const type = link.dataset.link;
+
+        if (type === 'home') {
+            link.href = isHome ? '#home' : '/index.html';
+        }
+
+        if (type === 'servicios') {
+            link.href = '/servicios.html';
+        }
+
+        if (type === 'contacto') {
+            link.href = isHome ? '#contacto' : '/index.html#contacto';
+        }
+    });
+}
+
+// ===============================
+// SITE INIT (hero + footer)
+// ===============================
+function initSite() {
+
+    // Año footer
+    const year = document.getElementById('year');
+    if (year) {
+        year.textContent = new Date().getFullYear();
+    }
+
+    // Hero animations (solo si existe)
     const elements = ['hero-tag', 'hero-title', 'hero-desc', 'hero-btns'];
+
     elements.forEach((id, index) => {
         const el = document.getElementById(id);
         if (!el) return;
@@ -66,8 +126,14 @@ function initSite() {
     });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+// ===============================
+// DOM READY
+// ===============================
+document.addEventListener('DOMContentLoaded', () => {
     loadPartials().then(() => {
+        setupSmartMenu();
+        setupNavbar();
+        setupNavbarInitialState();
         initSite();
     });
 });
