@@ -1,75 +1,58 @@
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Terabyte Bs As - Tecnología a tu servicio</title>
+    <title>Terabyte Bs As - Tecnología a tu servicio</title>
 
-        <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
-            rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
+          rel="stylesheet">
 
-        <link rel="stylesheet" href="styles/css/main.css">
-    </head>
-
-
-
+    <link rel="stylesheet" href="styles/css/main.css">
+</head>
 
 <body class="bg-gray-50 text-gray-800">
 
-    <!-- NAVBAR -->
-    <div data-include="partials/header.html "></div>
+    <!-- HEADER / NAV -->
+    <div data-include="partials/header.html"></div>
 
-
-    <!-- HERO SECTION -->
+    <!-- HERO -->
     <div data-include="partials/hero.html"></div>
 
-
-    <!-- SERVICES SECTION -->
-
+    <!-- SERVICIOS (resumen / mismo contenido reutilizado) -->
     <div data-include="partials/servicios.html"></div>
-
-
-    <!-- PRODUCTS SECTION -->
-
 
     <!-- BANNER PROMO -->
     <section class="py-20 bg-blue-900 relative overflow-hidden">
         <div class="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-blue-500 rounded-full opacity-20 blur-3xl"></div>
-        <div
-            class="container mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+        <div class="container mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
             <div>
-                <h2 class="text-3xl font-bold text-white mb-2 uppercase">¿Necesitas renovar o actualizar el equipo de tu
-                    hogar, oficina o negocio?
+                <h2 class="text-3xl font-bold text-white mb-2 uppercase">
+                    ¿Necesitás renovar o actualizar tu equipo?
                 </h2>
-                <p class="text-blue-200 text-lg">Hacemos presupuestos a medida, brindamos soporte y asesoramiento en
-                    Buenos Aires.
+                <p class="text-blue-200 text-lg">
+                    Presupuestos a medida y soporte en Buenos Aires.
                 </p>
             </div>
             <a href="#contacto"
-                class="bg-white text-blue-900 px-10 py-4 rounded-full font-extrabold shadow-lg hover:bg-blue-50 transition-colors whitespace-nowrap uppercase tracking-tighter">
-                Solicitar Presupuesto
+               class="bg-white text-blue-900 px-10 py-4 rounded-full font-extrabold shadow-lg hover:bg-blue-50 transition-colors uppercase">
+                Solicitar presupuesto
             </a>
         </div>
     </section>
 
-    <!-- CONTACT SECTION -->
+    <!-- CONTACTO -->
     <div data-include="partials/contacto.html"></div>
-
 
     <!-- FOOTER -->
     <div data-include="partials/footer.html"></div>
 
-
     <script src="js/main.js"></script>
 </body>
-
 </html>
