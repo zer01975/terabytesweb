@@ -95,9 +95,11 @@ function setupSmartMenu() {
             link.href = '/servicios.html';
         }
 
+        
         if (type === 'contacto') {
             link.href = isHome ? '#contacto' : '/index.html#contacto';
         }
+
     });
 }
 
@@ -124,6 +126,17 @@ function initSite() {
             el.classList.add('opacity-100', 'translate-y-0');
         }, index * 200);
     });
+
+    // Scroll correcto a #contacto si viene con hash
+if (window.location.hash === '#contacto') {
+    const contacto = document.getElementById('contacto');
+    if (contacto) {
+        setTimeout(() => {
+            contacto.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+    }
+}
+
 }
 
 // ===============================
