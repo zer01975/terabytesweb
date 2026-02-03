@@ -172,7 +172,27 @@ function initSite() {
         }, 100);
     }
 }
+function setupContactForm() {
+    document.addEventListener("submit", (e) => {
+        if (e.target.getAttribute("name") === "contacto") {
+            e.preventDefault();
 
+            const myForm = e.target;
+            const formData = new FormData(myForm);
+
+            fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData).toString(),
+            })
+            .then(() => {
+                alert("¡Gracias! Tu consulta ha sido enviada correctamente.");
+                myForm.reset();
+            })
+            .catch((error) => alert("Error: " + error));
+        }
+    });
+}
 // ===============================
 // EJECUCIÓN PRINCIPAL
 // ===============================
@@ -184,29 +204,30 @@ document.addEventListener('DOMContentLoaded', () => {
         initSite();
         mostrarServicioPorParametro();
         setupBreadcrumbServicio();
+        setupContactForm();
     });
 });
 // Manejador de envíos para Netlify Forms (AJAX)
-document.addEventListener("submit", (e) => {
-    // Verificamos que sea nuestro formulario de contacto
-    if (e.target.getAttribute("name") === "contacto") {
-        e.preventDefault(); // Evita que la página intente recargar/navegar
+// document.addEventListener("submit", (e) => {
+//     // Verificamos que sea nuestro formulario de contacto
+//     if (e.target.getAttribute("name") === "contacto") {
+//         e.preventDefault(); // Evita que la página intente recargar/navegar
 
-        const myForm = e.target;
-        const formData = new FormData(myForm);
+//         const myForm = e.target;
+//         const formData = new FormData(myForm);
 
-        fetch("/", {
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: new URLSearchParams(formData).toString(),
-        })
-            .then(() => {
-                // Aquí puedes personalizar el mensaje de éxito
-                alert("¡Gracias! Tu consulta ha sido enviada correctamente.");
-                myForm.reset(); // Limpia los campos
-            })
-            .catch((error) => {
-                alert("Hubo un error al enviar el formulario: " + error);
-            });
-    }
-});
+//         fetch("/", {
+//             method: "POST",
+//             headers: { "Content-Type": "application/x-www-form-urlencoded" },
+//             body: new URLSearchParams(formData).toString(),
+//         })
+//             .then(() => {
+//                 // Aquí puedes personalizar el mensaje de éxito
+//                 alert("¡Gracias! Tu consulta ha sido enviada correctamente.");
+//                 myForm.reset(); // Limpia los campos
+//             })
+//             .catch((error) => {
+//                 alert("Hubo un error al enviar el formulario: " + error);
+//             });
+//     }
+// });
