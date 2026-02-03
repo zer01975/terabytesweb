@@ -186,3 +186,27 @@ document.addEventListener('DOMContentLoaded', () => {
         setupBreadcrumbServicio();
     });
 });
+// Manejador de envíos para Netlify Forms (AJAX)
+document.addEventListener("submit", (e) => {
+    // Verificamos que sea nuestro formulario de contacto
+    if (e.target.getAttribute("name") === "contacto") {
+        e.preventDefault(); // Evita que la página intente recargar/navegar
+
+        const myForm = e.target;
+        const formData = new FormData(myForm);
+
+        fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData).toString(),
+        })
+            .then(() => {
+                // Aquí puedes personalizar el mensaje de éxito
+                alert("¡Gracias! Tu consulta ha sido enviada correctamente.");
+                myForm.reset(); // Limpia los campos
+            })
+            .catch((error) => {
+                alert("Hubo un error al enviar el formulario: " + error);
+            });
+    }
+});
