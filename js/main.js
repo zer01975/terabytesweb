@@ -95,7 +95,7 @@ function setupSmartMenu() {
             link.href = '/servicios.html';
         }
 
-        
+
         if (type === 'contacto') {
             link.href = isHome ? '#contacto' : '/index.html#contacto';
         }
@@ -128,51 +128,109 @@ function initSite() {
     });
 
     // Scroll correcto a #contacto si viene con hash
-if (window.location.hash === '#contacto') {
-    const contacto = document.getElementById('contacto');
-    if (contacto) {
+    if (window.location.hash === '#contacto') {
+        const contacto = document.getElementById('contacto');
+        if (contacto) {
+            setTimeout(() => {
+                contacto.scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+        }
+    }
+    // Scroll correcto si viene con hash (#servicios, #contacto, etc)
+    if (window.location.hash) {
+        const targetId = window.location.hash.replace('#', '');
+
         setTimeout(() => {
-            contacto.scrollIntoView({ behavior: 'smooth' });
+            const target = document.getElementById(targetId);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
         }, 100);
     }
-}
+
 
 }
 
 // ===============================
 // DOM READY
 // ===============================
+
+document.addEventListener('DOMContentLoaded', () => {
+    const navbar = document.querySelector('.navbar');
+    if (!navbar) return;
+
+    // Detectar si estamos en HOME
+    const isHome =
+        window.location.pathname === '/' ||
+        window.location.pathname.endsWith('index.html');
+
+    // Estado inicial
+    if (!isHome) {
+        navbar.classList.add('navbar-solid');
+        navbar.classList.remove('scrolled');
+    }
+
+    // Scroll SOLO en home
+    if (isHome) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    }
+});
+function mostrarServicioPorParametro() {
+    const params = new URLSearchParams(window.location.search);
+    const tipo = params.get('tipo');
+
+    if (!tipo) return;
+
+    const map = {
+        pc: 'listaPC',
+        cctv: 'listaCCTV',
+        electrico: 'listaElectricidad'
+    };
+
+    document.querySelectorAll('.servicio-detalle').forEach(sec => {
+        sec.classList.add('hidden');
+    });
+
+    const targetId = map[tipo];
+    if (!targetId) return;
+
+    const target = document.getElementById(targetId);
+    if (target) {
+        target.classList.remove('hidden');
+    }
+}
+function setupBreadcrumbServicio() {
+    const params = new URLSearchParams(window.location.search);
+    const tipo = params.get('tipo');
+
+    if (!tipo) return;
+
+    const map = {
+        pc: 'PC & Redes',
+        cctv: 'CCTV',
+        electrico: 'Electricidad'
+    };
+
+    const breadcrumb = document.getElementById('breadcrumb-servicio');
+    if (breadcrumb && map[tipo]) {
+        breadcrumb.textContent = map[tipo];
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     loadPartials().then(() => {
         setupSmartMenu();
         setupNavbar();
         setupNavbarInitialState();
         initSite();
+        mostrarServicioPorParametro();
+        setupBreadcrumbServicio();
     });
 });
-document.addEventListener('DOMContentLoaded', () => {
-  const navbar = document.querySelector('.navbar');
-  if (!navbar) return;
 
-  // Detectar si estamos en HOME
-  const isHome =
-    window.location.pathname === '/' ||
-    window.location.pathname.endsWith('index.html');
-
-  // Estado inicial
-  if (!isHome) {
-    navbar.classList.add('navbar-solid');
-    navbar.classList.remove('scrolled');
-  }
-
-  // Scroll SOLO en home
-  if (isHome) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
-    });
-  }
-});

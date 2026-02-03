@@ -1,309 +1,73 @@
-  <section id="servicios" class="py-24 bg-gray-50 border-t border-gray-200 " >
 
-        <div class="container mx-auto px-6 ">
-            <div class="flex justify-between items-end mb-12">
-                <div>
-                    <h2
-                        class="text-3xl md:text-4xl font-bold text-gray-900 mb-2 uppercase tracking-tight text-decoration: underline">
-                        Servicios</h2>
-                    <p class="text-gray-600 italic">Pedi tu presupuesto</p>
-                </div>
-                
+<section id="servicios" class="py-24 bg-gray-50 border-t border-gray-200 ">
+
+    <div class="container mx-auto px-6 ">
+        <div class="flex justify-between items-end mb-12">
+            <div>
+                <h2
+                    class="text-3xl md:text-4xl font-bold text-gray-900 mb-2 uppercase tracking-tight text-decoration: underline">
+                    Servicios</h2>
+                <p class="text-gray-600 italic">Pedi tu presupuesto</p>
             </div>
 
-            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Los productos se podrían inyectar con JS, pero aquí los dejamos estáticos para SEO -->
-                <div
-                    class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 group">
-                    <div
-                        class="h-48 bg-gray-200 flex items-center justify-center text-6xl group-hover:scale-105 transition-transform duration-300">
-                        <img src="assets/img/domo dahua.jpg" alt="">
-                    </div>
-                    <div class="p-6 text-center">
-                        <span class="text-xs font-bold text-blue-600 uppercase tracking-widest">CAMARAS Y
-                            MONITOREO</span>
-                        <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">CAMARAS Y MONITOREO</h3>
-                        <a href="#listaCCTV"><button
-                                class="w-full bg-gray-900 text-white py-3 rounded-lg hover:bg-blue-600 transition-colors flex items-center justify-center gap-2 font-bold">
-                                CAMARAS Y MONITOREO
-                            </button></a>
-
-                    </div>
-                </div>
-
-
-                <div
-                    class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 group">
-                    <div
-                        class="h-48 bg-gray-200 flex items-center justify-center text-6xl group-hover:scale-105 transition-transform duration-300">
-                        <img src="assets/img/pc notebook.avif" alt="">
-                    </div>
-                    <div class="p-6 text-center">
-                        <span
-                            class="text-xs font-bold text-blue-600 uppercase tracking-widest">PC-NOTEBOOKS-REDES</span>
-                        <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">PC-NOTEBOOKS-REDES</h3>
-
-                        <a href="#listaPC"><button
-                                class="w-full bg-gray-900 text-white py-3 rounded-lg hover:bg-blue-600 transition-colors flex items-center justify-center gap-2 font-bold">
-                                PC-NOTEBOOKS-REDES
-                            </button></a>
-                    </div>
-                </div>
-                <div
-                    class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 group">
-                    <div
-                        class="h-48 bg-gray-200 flex items-center justify-center text-6xl group-hover:scale-105 transition-transform duration-300">
-                        <img src="assets/img/electricidad.avif" alt="">
-                    </div>
-                    <div class="p-6 text-center">
-                        <span
-                            class="text-xs font-bold text-blue-600 uppercase tracking-widest">ELECTRICIDAD-ILUMINACIÓN</span>
-                        <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">ELECTRICIDAD-ILUMINACIÓN</h3>
-
-                        <a href="#listaElectricidad"><button
-                                class="w-full bg-gray-900 text-white py-3 rounded-lg hover:bg-blue-600 transition-colors flex items-center justify-center gap-2 font-bold">
-                                ELECTRICIDAD-ILUMINACIÓN
-                            </button></a>
-                    </div>
-                </div>
-            </div>
         </div>
 
-    </section>
-
-    <!-- detalles servicios -->
-    <section id="detalleservicios">
-        <hr>
-        <section id="listaPC" class="py-24 bg-white">
-            <div class="container mx-auto px-6">
-                <a href="#servicios" class="hidden md:flex items-center text-blue-600 font-bold hover:underline">
-                    Lista de servicios <i class="fas fa-chevron-right ml-2 text-xs"></i>
-                </a>
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">PC-NOTEBOOKS-REDES</h2>
-
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Los productos se podrían inyectar con JS, pero aquí los dejamos estáticos para SEO -->
+            <div
+                class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 group">
+                <div
+                    class="h-48 bg-gray-200 flex items-center justify-center text-6xl group-hover:scale-105 transition-transform duration-300">
+                    <img src="assets/img/domo dahua.jpg" alt="">
                 </div>
-
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Service 1 -->
-                    <div
-                        class="group p-8 border border-gray-100 rounded-2xl bg-white shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                        <div
-                            class="w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                            <i class="fas fa-screwdriver-wrench text-2xl"> </i>
-                            
-                        </div>
-                        
-
-                        
-                        <h3 class="text-xl font-bold text-gray-900 mb-3 text-blue-900">Servicio Técnico</h3>
-                        <p class="text-gray-600 leading-relaxed italic text-sm">
-                            Reparación de PC, Notebooks, All in One y consolas. Diagnóstico de fallas
-                        </p>
-                        
-                    </div>
-                    <!-- Service 2 -->
-                    <div
-                        class="group p-8 border border-gray-100 rounded-2xl bg-white shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                        <div
-                            class="w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                            <i class="fas fa-desktop text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3 text-blue-900">Armado de PC</h3>
-                        <p class="text-gray-600 leading-relaxed italic text-sm">
-                            Asesoramiento y ensamblaje de equipos a medida:
-                        </p>
-                    </div>
-                    <!-- Service 3 -->
-                    <div
-                        class="group p-8 border border-gray-100 rounded-2xl bg-white shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                        <div
-                            class="w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                            <i class="fas fa-broom text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3 text-blue-900">Mantenimiento y Limpieza</h3>
-                        <p class="text-gray-600 leading-relaxed italic text-sm">
-                            Limpieza física interna, cambio de pasta térmica y optimización de refrigeración para
-                            alargar la
-                            vida útil.
-                        </p>
-                    </div>
-                    <!-- Service 4 -->
-                    <div
-                        class="group p-8 border border-gray-100 rounded-2xl bg-white shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                        <div
-                            class="w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                            <i class="fas fa-desktop text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3 text-blue-900">Software y Sistema</h3>
-                        <p class="text-gray-600 leading-relaxed italic text-sm">
-                            Instalación de Windows, Paquete Office, drivers, eliminación de virus y optimización de
-                            velocidad.
-                        </p>
-                    </div>
-                    <!-- Service 5 -->
-                    <div
-                        class="group p-8 border border-gray-100 rounded-2xl bg-white shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                        <div
-                            class="w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                            <i class="fas fa-wifi text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3 text-blue-900">Redes y Conectividad</h3>
-                        <p class="text-gray-600 leading-relaxed italic text-sm">
-                            Configuración de Routers, repetidores WiFi, cableado estructurado y solución de problemas de
-                            internet.
-                        </p>
-                    </div>
+                <div class="p-6 text-center">
+                    <!-- <span class="text-xs font-bold text-blue-600 uppercase tracking-widest">CAMARAS Y
+                            MONITOREO</span> -->
+                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">CCTV-IP</h3>
+                    <a href="servicios.html?tipo=cctv"><button
+                            class="w-full bg-gray-900 text-white py-3 rounded-lg hover:bg-blue-600 transition-colors flex items-center justify-center gap-2 font-bold">
+                            CAMARAS Y MONITOREO
+                        </button></a>
 
                 </div>
             </div>
-        </section>
-        <hr>
-        <section id="listaCCTV" class="py-24 bg-white">
-            <div class="container mx-auto px-6">
-                 <a href="#servicios" class="hidden md:flex items-center text-blue-600 font-bold hover:underline">
-                    Lista de servicios <i class="fas fa-chevron-right ml-2 text-xs"></i>
-                </a>
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">SISTEMAS CÁMARAS SEGURIDAD</h2>
 
+
+            <div
+                class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 group">
+                <div
+                    class="h-48 bg-gray-200 flex items-center justify-center text-6xl group-hover:scale-105 transition-transform duration-300">
+                    <img src="assets/img/pc notebook.avif" alt="">
                 </div>
+                <div class="p-6 text-center">
+                    <!-- <span class="text-xs font-bold text-blue-600 uppercase tracking-widest">PC-NOTEBOOKS-REDES</span> -->
+                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">Hardware-Software-Cableado</h3>
 
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Service 1 -->
-                    <!-- <div
-                    class="group p-8 border border-gray-100 rounded-2xl bg-white shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                    <div
-                        class="w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                        <i class="fas fa-screwdriver-wrench text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3 text-blue-900">Servicio Técnico</h3>
-                    <p class="text-gray-600 leading-relaxed italic text-sm">
-                     Diagnóstico de fallas en camaras, dvr, cableados fuentes.
-                    </p>
-                </div> -->
-                    <!-- Service 1 -->
-                    <div
-                        class="group p-8 border border-gray-100 rounded-2xl bg-white shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                        <div
-                            class="w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                            <i class="fas fa-store text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3 text-blue-900">Comercios y Locales</h3>
-                        <p class="text-gray-600 leading-relaxed italic text-sm">
-                            Control total de tu negocio estés donde estés. Ideal para tiendas, oficinas, depósitos.
-                            Respaldo en grabaciones de la actividad comercial.
-                        </p>
-                    </div>
-                    <!-- Service 2 -->
-                    <div
-                        class="group p-8 border border-gray-100 rounded-2xl bg-white shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                        <div
-                            class="w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                            <i class="fas fa-house text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3 text-blue-900">Casas y departamentos</h3>
-                        <p class="text-gray-600 leading-relaxed italic text-sm">
-                            Protegemos tu hogar con sistemas de videovigilancia. Ya sea una casa o departamento. Se
-                            ajusta el sistema a las necesidades del cliente.
-                            Seguridad, cuidado de personas mayores o niños.
-                        </p>
-                    </div>
-                    <!-- Service 3 -->
-                    <div
-                        class="group p-8 border border-gray-100 rounded-2xl bg-white shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                        <div
-                            class="w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                          <i class="fas fa-building text-2xl"></i> 
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3 text-blue-900">Estacionamientos, edificios y
-                            depósitos</h3>
-                        <p class="text-gray-600 leading-relaxed italic text-sm">
-                            Control y monitoreo de acceso de automoviles en garages. Espacios comunes de edificios.
-                            Movimientos en depósitos y bauleras.
-                        </p>
-                    </div>
-                    <!-- Service 4 -->
-                    <div
-                        class="group p-8 border border-gray-100 rounded-2xl bg-white shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                        <div
-                            class="w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                         <i class="fas fa-tools text-2xl"></i> 
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3 text-blue-900">Instalación y soporte Técnico
-                        </h3>
-                        <p class="text-gray-600 leading-relaxed italic text-sm">Instalación, soporte y reparación.
-                            Diagnóstico de fallas en camaras, dvr, cableados fuentes.
-                        </p>
-                    </div>
+                    <a href="servicios.html?tipo=pc"><button
+                            class="w-full bg-gray-900 text-white py-3 rounded-lg hover:bg-blue-600 transition-colors flex items-center justify-center gap-2 font-bold">
+                            PC-NOTEBOOKS-REDES
+                        </button></a>
+                </div>
+            </div>
+            <div
+                class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 group">
+                <div
+                    class="h-48 bg-gray-200 flex items-center justify-center text-6xl group-hover:scale-105 transition-transform duration-300">
+                    <img src="assets/img/electricidad.avif" alt="">
+                </div>
+                <div class="p-6 text-center">
                     
+                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">General-Domotica</h3>
+                    <a href="servicios.html?tipo=electrico"><button
+                            class="w-full bg-gray-900 text-white py-3 rounded-lg hover:bg-blue-600 transition-colors flex items-center justify-center gap-2 font-bold">
+                            ELECTRICIDAD-ILUMINACIÓN
+                        </button></a>
                 </div>
             </div>
-        </section>
-        <hr>
-        <section id="listaElectricidad" class="py-24 bg-white">
-            <div class="container mx-auto px-6">
-                 <a href="#servicios" class="hidden md:flex items-center text-blue-600 font-bold hover:underline">
-                    Lista de servicios <i class="fas fa-chevron-right ml-2 text-xs"></i>
-                </a>
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">ELECTRICIDAD-ILUMINACION</h2>
+           
+        </div>
+    </div>
 
-                </div>
+</section>
 
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    
-                    <div
-                        class="group p-8 border border-gray-100 rounded-2xl bg-white shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                        <div
-                            class="w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                            <i class="fas fa-bolt text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3 text-blue-900">Electricidad general</h3>
-                        <p class="text-gray-600 leading-relaxed italic text-sm">
-                            Instalación de tomas, puntos, interruptores termicos, disyuntores, etc
-                        </p>
-                    </div>
-                    <!-- Service 2 -->
-                    <div
-                        class="group p-8 border border-gray-100 rounded-2xl bg-white shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                        <div
-                            class="w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                            <i class="fas fa-lightbulb text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3 text-blue-900">Iluminación</h3>
-                        <p class="text-gray-600 leading-relaxed italic text-sm">
-                            Iluminación para su hogar y comercio.( spot, difusores, dicroicas, tubos, tiras led,etc)
-                        </p>
-                    </div>
-                    <!-- Service 3 -->
-                    <div
-                        class="group p-8 border border-gray-100 rounded-2xl bg-white shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                        <div
-                            class="w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                         <i class="	fas fa-seedling text-2xl"></i> 
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3 text-blue-900">Eficiencia energética</h3>
-                        <p class="text-gray-600 leading-relaxed italic text-sm">
-                            Migración total o parcial a iluminación led,
-                            reduciendo costos en el consumo de energía eléctrica y en la emanación de calor, tanto en el
-                            hogar o comercio, como al medioambiente. </p>
-                    </div>
-                    <!-- Service 4 -->
-                    <div
-                        class="group p-8 border border-gray-100 rounded-2xl bg-white shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                        <div
-                            class="w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                            <i class=" text-2xl"><img src="assets/img/casa-inteligente.png" alt=""></i> 
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3 text-blue-900">Casa inteligente domótica
-                        </h3>
-                        <p class="text-gray-600 leading-relaxed italic text-sm">Instalación de interruptores wifi y RF  smartlife.
-                            En tomas, luces, temporizadores,riego,accesos, portones aire acondicionado. Tome control de sus artefactos en su celular
-                        </p>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-    </section>
+<script src="js/main.js"></script>
