@@ -150,3 +150,29 @@ document.addEventListener('DOMContentLoaded', () => {
         initSite();
     });
 });
+document.addEventListener('DOMContentLoaded', () => {
+  const navbar = document.querySelector('.navbar');
+  if (!navbar) return;
+
+  // Detectar si estamos en HOME
+  const isHome =
+    window.location.pathname === '/' ||
+    window.location.pathname.endsWith('index.html');
+
+  // Estado inicial
+  if (!isHome) {
+    navbar.classList.add('navbar-solid');
+    navbar.classList.remove('scrolled');
+  }
+
+  // Scroll SOLO en home
+  if (isHome) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  }
+});

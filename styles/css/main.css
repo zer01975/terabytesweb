@@ -1,5 +1,6 @@
 body {
     font-family: 'Inter', sans-serif;
+    
 }
 
 .hero-gradient {
@@ -8,4 +9,27 @@ body {
         rgba(30, 58, 138, 0.9) 0%,
         rgba(0, 0, 0, 0.8) 100%
     );
+}
+/* Navbar base */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+/* Home arriba */
+body.home .navbar {
+  background: transparent;
+}
+
+/* Home scrolleado */
+body.home .navbar.scrolled {
+  background: #111;
+}
+
+/* Todas las demás páginas */
+.navbar-solid {
+  background: #111;
 }
