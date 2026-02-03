@@ -91,29 +91,28 @@
                 </div> -->
             <div class="bg-gray-50 p-10 rounded-3xl shadow-inner border border-gray-100">
                 <form name="contacto" method="POST" data-netlify="true" class="space-y-6">
-
                     <input type="hidden" name="form-name" value="contacto" />
 
                     <div>
                         <label class="block text-xs font-bold text-gray-500 uppercase mb-2 ml-1">Nombre Completo</label>
-                        <input type="text" name="nombre"
+                        <input type="text" name="nombre" required
                             class="w-full px-4 py-4 rounded-xl border-0 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-blue-600 outline-none transition-all"
-                            placeholder="Ej. Juan Pérez" required>
+                            placeholder="Ej. Juan Pérez">
                     </div>
 
                     <div>
                         <label class="block text-xs font-bold text-gray-500 uppercase mb-2 ml-1">Email</label>
-                        <input type="email" name="email"
+                        <input type="email" name="email" required
                             class="w-full px-4 py-4 rounded-xl border-0 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-blue-600 outline-none transition-all"
-                            placeholder="juan@gmail.com" required>
+                            placeholder="juan@gmail.com">
                     </div>
 
                     <div>
                         <label class="block text-xs font-bold text-gray-500 uppercase mb-2 ml-1">Mensaje o
                             Consulta</label>
-                        <textarea name="mensaje" rows="4"
+                        <textarea name="mensaje" rows="4" required
                             class="w-full px-4 py-4 rounded-xl border-0 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-blue-600 outline-none transition-all"
-                            placeholder="¿En qué podemos ayudarte?" required></textarea>
+                            placeholder="¿En qué podemos ayudarte?"></textarea>
                     </div>
 
                     <button type="submit"
