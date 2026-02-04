@@ -95,10 +95,21 @@ function setupNavbar() {
     }
 
     // Lógica del Menú Mobile (se mantiene igual)
+    // if (menuBtn && mobileMenu) {
+    //     menuBtn.addEventListener('click', () => {
+    //         mobileMenu.classList.toggle('hidden');
+    //     });
+    // }
+   //Menú Mobile
     if (menuBtn && mobileMenu) {
         menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+           mobileMenu.classList.toggle('hidden');
+       });
+
+       document.querySelectorAll('.mobile-link').forEach(link => {
+           link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });         });
     }
 }
 
