@@ -29,16 +29,15 @@ function setupNavbar() {
 
     if (!navbar) return;
 
-    // Detectamos si es Servicios o Home
-    const isServicios = window.location.pathname.includes('servicios.html');
-    const isHome = window.location.pathname === '/' || window.location.pathname.endsWith('index.html');
+    const path = window.location.pathname;
+
+    const isServicios = path.includes('/servicios');
+    const isHome = path === '/' || path.endsWith('index.html');
 
     if (isServicios) {
-        // En servicios: Forzamos estado sólido y NO escuchamos el scroll
         navbar.classList.add('bg-blue-900', 'shadow-xl', 'py-2');
         navbar.classList.remove('bg-transparent', 'py-4');
     } else if (isHome) {
-        // En home: Aplicamos la lógica de scroll
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
                 navbar.classList.add('bg-blue-900', 'shadow-xl', 'py-2');
@@ -50,7 +49,7 @@ function setupNavbar() {
         });
     }
 
-    // Menú Mobile
+    // Mobile
     if (menuBtn && mobileMenu) {
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
@@ -183,7 +182,7 @@ function setupDynamicTitle() {
 
 //     let html = `<a href="/index.html">Inicio</a>`;
 
-    
+
 //     if (
 //         path.includes('servicios') ||
 //         (path.includes('index') && hash === '#servicios')
@@ -191,7 +190,7 @@ function setupDynamicTitle() {
 //         html += ` / <a href="/index.html#servicios">Servicios</a>`;
 //     }
 
-   
+
 //     if (tipo) {
 
 //         let label = '';
