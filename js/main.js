@@ -161,10 +161,13 @@ function setupDynamicTitle() {
     }
 
     // Home scrolleado a servicios
-    if (!tipo && path.includes('index') && hash === '#servicios') {
+    // if (!tipo && path.includes('index') && hash === '#servicios') {
+    //     title = 'Servicios | Terabyte';
+    // }
+    if (!tipo && hash === '#servicios') {
         title = 'Servicios | Terabyte';
     }
-    if (!tipo && path.includes('index') && hash === '#contacto') {
+    if (!tipo && hash === '#contacto') {
         title = 'Contacto | Terabyte';
     }
 
