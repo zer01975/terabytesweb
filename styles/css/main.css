@@ -13,3 +13,25 @@
     position: sticky; /* O fixed, según tu diseño */
     top: 0;
 }
+.breadcrumb {
+    font-size: 14px;
+    margin: 15px 0;
+}
+
+.breadcrumb a {
+    color: #0a58ca;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb span {
+    color: #555;
+}
+.breadcrumb svg {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
